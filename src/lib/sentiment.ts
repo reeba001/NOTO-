@@ -1,0 +1,2 @@
+const words:Record<string,string[]>={sunny:['good','great','joy','happy','love','grateful','excited','proud'],rain:['sad','lonely','cry','hurt','miss','tired'],fog:['worry','anxious','unsure','overwhelmed','stress'],storm:['angry','frustrated','furious']};
+export function weatherHint(text:string){const s=text.toLowerCase();for(const [weather,list] of Object.entries(words))if(list.some(w=>s.includes(w)))return weather;return 'soft skies'}

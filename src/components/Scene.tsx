@@ -1,0 +1,2 @@
+import {useMemo} from 'react';import type {Entry} from '../lib/types';import {renderScene,sceneAlt} from '../features/landscape/renderScene';
+export function Scene({entry,className=''}:{entry:Entry;className?:string}){const svg=useMemo(()=>renderScene(entry,{width:900,height:420,reducedMotion:window.matchMedia('(prefers-reduced-motion: reduce)').matches}),[entry]);return <div className={`scene ${className}`} role="img" aria-label={sceneAlt(entry)} dangerouslySetInnerHTML={{__html:svg}}/>}
